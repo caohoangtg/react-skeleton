@@ -27,7 +27,7 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
         type: 'asset/inline',
       },
       {
@@ -43,9 +43,17 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', './public/index.html'),
-      favicon: './public/favicon.ico',
-      filename: './index.html',
-      manifest: "./public/manifest.json",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { 
+          from: "public", 
+          to: ".",
+          globOptions: {
+            ignore: ["**/public/index.html"],
+          }
+        },
+      ],
     }),
   ],
   stats: 'errors-only',

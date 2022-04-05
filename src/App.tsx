@@ -10,8 +10,8 @@ const App = () => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <p>{process.env.name}</p>
-        <p>{process.env.BASE_URL}</p>
+        <p>{process.env.NODE_ENV}</p>
+        <p>{process.env.TARGET_ENV}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
