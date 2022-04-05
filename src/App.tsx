@@ -1,6 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ClickCounter from "./ClickCounter";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         </p>
         <p>{process.env.NODE_ENV}</p>
         <p>{process.env.TARGET_ENV}</p>
+        <ClickCounter />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -23,6 +25,6 @@ const App = () => {
       </header>
     </div>
   );
-}
+};
 
 export default App;
